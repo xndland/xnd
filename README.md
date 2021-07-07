@@ -83,6 +83,8 @@ numbers[also]((value) => console.log(`before push: ${value}`)).push(4);
 
 ### `build`
 
+Importing from `"./build.ts"` loads all of the following extensions. Alternatively you can load individuals extensions by importing from `"./{{Type}}/build.ts"` (e.g. `"./String/build.ts"`). You can also use functions without the extensions by importing from `"./{{Type}}/functions/build.ts"` (e.g. `"./String/functions/build.ts"`).
+
 #### `String[build]`
 
 ```ts
@@ -99,10 +101,6 @@ function greeting(name?: string) {
   });
 }
 ```
-
-Alternatively you can import only the `String` extension from `"./String/build.ts"`.
-
-You can also use the String builder function directly without the `String` extension:
 
 ```ts
 import buildString from "./String/functions/build.ts";
