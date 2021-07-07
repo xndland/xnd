@@ -8,6 +8,7 @@ Safely extending and complementing JavaScript built-ins since 2021.
 
 - [ ] Add `TypedArray` extension methods
 - [ ] Add `filter`, `reduce`, and other built-in equivalents for `Map`, `Set`, `Iterator`, etc. (defer adding things like `sumBy`, `groupBy`, etc. until after initial release)
+- [ ] Update docs for JS/TS
 - [ ] Publish to npm (via GitHub packages?)
 - [ ] Publish to deno.land
 - [ ] Publish to a CDN (or will skypack.dev already work once published to npm?)
@@ -83,6 +84,40 @@ numbers[also]((value) => console.log(`before push: ${value}`)).push(4);
 ### `build`
 
 #### `String[build]`
+
+```ts
+import build from "./build.ts";
+
+function greeting(name?: string) {
+  return String[build](function* () {
+    yield "Hello";
+    if (name) {
+      yield " ";
+      yield name;
+    }
+    yield "!";
+  });
+}
+```
+
+Alternatively you can import only the `String` extension from `"./String/build.ts"`.
+
+You can also use the String builder function directly without the `String` extension:
+
+```ts
+import buildString from "./String/functions/build.ts";
+
+function greeting(name?: string) {
+  return buildString(function* () {
+    yield "Hello";
+    if (name) {
+      yield " ";
+      yield name;
+    }
+    yield "!";
+  });
+}
+```
 
 #### `Object[build]`
 
