@@ -2,21 +2,29 @@
 
 Safely extending and complementing JavaScript built-ins since 2021.
 
+---
+
+🚧 Not yet published 🚧
+
+- [ ] Add `TypedArray` extension methods
+- [ ] Add `filter`, `reduce`, and other built-in equivalents for `Map`, `Set`, `Iterator`, etc. (defer adding things like `sumBy`, `groupBy`, etc. until after initial release)
+- [ ] Publish to npm (via GitHub packages?)
+- [ ] Publish to deno.land
+- [ ] Publish to a CDN (or will skypack.dev already work once published to npm?)
+
+---
+
 ## Getting Started
 
 Xnd is a collection of extensions and complements to JavaScript built-ins. Extensions and complements are defined in [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) supported by modern web browsers, [Deno](https://deno.land/), [Node.js](https://nodejs.org/), etc.
 
 ### Web
 
-todo: publish to skypack.dev
-
 ```js
 import also from "https://cdn.skypack.dev/xnd@1.0.0/also.js";
 ```
 
 ### Deno
-
-todo: publish to deno.land
 
 ```js
 import also from "https://cdn.skypack.dev/xnd@1.0.0/also.js?dts";
@@ -29,8 +37,6 @@ import also from "https://deno.land/x/xnd@1.0.0/also.ts";
 ```
 
 ### Node.js
-
-todo: publish to npm
 
 ```sh
 npm i xnd
