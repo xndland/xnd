@@ -1,0 +1,15 @@
+{
+  "name": "xnd",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Safely extending and complementing JavaScript built-ins since 2021.",
+  "scripts": {
+    "test": "deno test"
+  },
+  "keywords": [
+    "stdlib",
+    "util"
+  ],
+  "author": "Mark Fulton",
+  "license": "MIT"
+}
