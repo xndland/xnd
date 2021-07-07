@@ -10,10 +10,12 @@ Deno.test("WeakMap[build]<no entries>", () => {
 
 Deno.test("WeakMap[build]<single entry>", () => {
   const a = { key: 1 };
+  const b = { key: 2 };
   const target = WeakMap[build](function* () {
     yield [a, 1];
   });
   assertEquals(target.get(a), 1);
+  assert(!target.has(b));
 });
 
 Deno.test("WeakMap[build]<multiple entries>", () => {

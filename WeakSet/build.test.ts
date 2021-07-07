@@ -10,10 +10,12 @@ Deno.test("WeakSet[build]<no entries>", () => {
 
 Deno.test("WeakSet[build]<single entry>", () => {
   const a = { value: 1 };
+  const b = { value: 2 };
   const target = WeakSet[build](function* () {
     yield a;
   });
   assert(target.has(a));
+  assert(!target.has(b));
 });
 
 Deno.test("WeakSet[build]<multiple entries>", () => {
