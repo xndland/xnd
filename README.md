@@ -102,6 +102,8 @@ function greeting(name?: string) {
 }
 ```
 
+or
+
 ```ts
 import buildString from "./String/functions/build.ts";
 
