@@ -76,6 +76,8 @@ numbers[also]((value) => console.log(`before push: ${value}`)).push(4);
 
 ### `build`
 
+#### `String[build]`
+
 #### `Object[build]`
 
 #### `Array[build]`
