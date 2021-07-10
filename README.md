@@ -119,6 +119,10 @@ function greeting(name?: string) {
 }
 ```
 
+### `apply`
+
+#### `Object.prototype[apply]`
+
 #### `Object[build]`
 
 #### `Array[build]`
@@ -212,6 +216,10 @@ const firstNumberDoubledAsExponential = numbers[0]
 #### `Number.prototype[rem]`
 
 #### `BigInt.prototype[rem]`
+
+### `run`
+
+#### `Object.prototype[run]`
 
 ### `sub`
 
