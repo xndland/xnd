@@ -1,7 +1,5 @@
-const AsyncIterator = Object.getPrototypeOf(
-  Object.getPrototypeOf(
-    Object.getPrototypeOf((async function* () {})()[Symbol.asyncIterator]())
-  )
-);
+import AsyncGeneratorFunction from "../constructors/AsyncGeneratorFunction.ts";
 
-export default AsyncIterator;
+export default Object.getPrototypeOf(
+  AsyncGeneratorFunction.prototype.prototype
+);

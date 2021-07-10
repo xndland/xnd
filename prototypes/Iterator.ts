@@ -1,7 +1,3 @@
-const Iterator = Object.getPrototypeOf(
-  Object.getPrototypeOf(
-    Object.getPrototypeOf((function* () {})()[Symbol.iterator]())
-  )
-);
+import GeneratorFunction from "../constructors/GeneratorFunction.ts";
 
-export default Iterator;
+export default Object.getPrototypeOf(GeneratorFunction.prototype.prototype);
