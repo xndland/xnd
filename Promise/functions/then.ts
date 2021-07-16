@@ -2,10 +2,10 @@ export default function then<T>(this: Promise<T>): Then<T> {
   return new Proxy(Provide.bind(this), proxyHandler) as Then<T>;
 }
 
-export type Then<T> = Promise<T> &
-  {
-    [P in keyof typeof Object.prototype]: Then<typeof Object.prototype[P]>;
-  } &
+export type Then<T> = {
+  [P in keyof typeof Object.prototype]: Then<typeof Object.prototype[P]>;
+} &
+  Pick<Promise<T>, "then" | "catch" | "finally"> &
   (T extends { new (...args: any): any }
     ? T extends { (...args: any): any }
       ? {
