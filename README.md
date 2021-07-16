@@ -141,6 +141,30 @@ function greeting(name?: string) {
 
 #### `BigInt.prototype[div]`
 
+### `get`
+
+#### `String.prototype[get]`
+
+#### `Object.prototype[get]`
+
+#### `Array.prototype[get]`
+
+#### `TypedArray.prototype[get]`
+
+#### `Map.prototype[get]`
+
+#### `WeakMap.prototype[get]`
+
+### `getOrSet`
+
+#### `Object.prototype[getOrSet]`
+
+#### `Array.prototype[getOrSet]`
+
+#### `Map.prototype[getOrSet]`
+
+#### `WeakMap.prototype[getOrSet]`
+
 ### `map`
 
 #### `Number.prototype[map]`
@@ -220,6 +244,18 @@ const firstNumberDoubledAsExponential = numbers[0]
 ### `run`
 
 #### `Object.prototype[run]`
+
+### `set`
+
+#### `Object.prototype[set]`
+
+#### `Array.prototype[set]`
+
+#### `TypedArray.prototype[set]`
+
+#### `Map.prototype[set]`
+
+#### `WeakMap.prototype[set]`
 
 ### `sub`
 
