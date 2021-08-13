@@ -1,1 +1,2 @@
-export default Object.getPrototypeOf(async function* () {}).constructor;
+export default Object.getPrototypeOf(async function* () {})
+  .constructor as AsyncGeneratorFunctionConstructor;
