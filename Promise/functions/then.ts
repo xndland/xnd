@@ -5,16 +5,18 @@ export default function then<T>(this: Promise<T>): Then<T> {
 export type Then<T> = {
   [P in keyof typeof Object.prototype]: Then<typeof Object.prototype[P]>;
 } &
-  Pick<Promise<T>, "then" | "catch" | "finally"> &
-  (T extends { new (...args: any): any }
-    ? T extends { (...args: any): any }
+  Pick<Promisify<T>, "then" | "catch" | "finally"> &
+  (T extends {
+    new (...args: infer TConstructorParameters): infer TInstance;
+  }
+    ? T extends { (...args: infer TFunctionParameters): infer TReturn }
       ? {
-          new (...args: ConstructorParameters<T>): Then<InstanceType<T>>;
-          (...args: Parameters<T>): Then<ReturnType<T>>;
+          new (...args: TConstructorParameters): Then<TInstance>;
+          (...args: TFunctionParameters): Then<TReturn>;
         }
-      : { new (...args: ConstructorParameters<T>): Then<InstanceType<T>> }
-    : T extends { (...args: any): any }
-    ? { (...args: Parameters<T>): Then<ReturnType<T>> }
+      : { new (...args: TConstructorParameters): Then<TInstance> }
+    : T extends { (...args: infer TFunctionParameters): infer TReturn }
+    ? { (...args: TFunctionParameters): Then<TReturn> }
     : T extends string
     ? { [P in keyof string]: Then<string[P]> }
     : T extends number
@@ -25,18 +27,28 @@ export type Then<T> = {
     ? { [P in keyof boolean]: Then<boolean[P]> }
     : T extends symbol
     ? { [P in keyof symbol]: Then<symbol[P]> }
-    : { [P in keyof T]: Then<T[P]> });
+    : { [P in keyof T]: Then<T[P]> }) &
+  { [P in keyof T]: Then<T[P]> };
+
+type Promisify<T> = T extends Promise<infer U>
+  ? Promise<Unpromisify<U>>
+  : Promise<T>;
+type Unpromisify<T> = T extends Promise<infer U> ? Unpromisify<U> : T;
 
 function Provide(this: unknown) {
   return this;
 }
 
-const proxyHandler: ProxyHandler<() => Promise<any>> = {
+const proxyHandler: ProxyHandler<() => Promise<unknown>> = {
   apply(provide, thisArgument, argumentsList) {
     return new Proxy(
       Provide.bind(
         provide().then((target) =>
-          Reflect.apply(target, thisArgument, argumentsList)
+          Reflect.apply(
+            target as (...args: unknown[]) => unknown,
+            thisArgument,
+            argumentsList
+          )
         )
       ),
       proxyHandler
@@ -45,7 +57,12 @@ const proxyHandler: ProxyHandler<() => Promise<any>> = {
   construct(provide, argumentsList) {
     return new Proxy(
       Provide.bind(
-        provide().then((target) => Reflect.construct(target, argumentsList))
+        provide().then((target) =>
+          Reflect.construct(
+            target as new (...args: unknown[]) => unknown,
+            argumentsList
+          )
+        )
       ),
       proxyHandler
     );
@@ -63,7 +80,8 @@ const proxyHandler: ProxyHandler<() => Promise<any>> = {
               const result =
                 target instanceof Object
                   ? Reflect.get(target, propertyKey, receiver)
-                  : target[propertyKey];
+                  : // @ts-expect-error 'symbol' is supported here
+                    (<Record<string | symbol, unknown>>target)[propertyKey];
               return typeof result === "function"
                 ? result.bind(target)
                 : result;
