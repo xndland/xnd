@@ -5,13 +5,13 @@ Xnd is a collection of extensions and complements to JavaScript built-ins. Exten
 ## Browsers
 
 ```js
-import $also from "https://cdn.skypack.dev/xnd/$also.js";
+import also from "https://cdn.skypack.dev/xnd/also.js";
 ```
 
 ## Deno
 
 ```js
-import $also from "https://cdn.skypack.dev/xnd/$also.js?dts";
+import also from "https://cdn.skypack.dev/xnd/also.js?dts";
 ```
 
 ## Node.js
@@ -21,5 +21,5 @@ npm i xnd
 ```
 
 ```js
-import $also from "xnd/$also";
+import also from "xnd/also";
 ```

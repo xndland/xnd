@@ -1,4 +1,4 @@
-import key from "../symbols/$run.js";
+import key from "../symbols/also.ts";
 
 declare global {
   interface Object {
@@ -8,8 +8,9 @@ declare global {
 
 Object.defineProperty(Object.prototype, key, { value });
 
-function value<T, R>(this: T, fn: (this: T) => R): R {
-  return fn.apply(this);
+function value<T>(this: T, fn: (value: T) => void): T {
+  fn(this);
+  return this;
 }
 
 export default key;

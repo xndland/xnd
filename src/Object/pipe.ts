@@ -1,4 +1,4 @@
-import key from "../symbols/$also.js";
+import key from "../symbols/pipe.ts";
 
 declare global {
   interface Object {
@@ -8,9 +8,8 @@ declare global {
 
 Object.defineProperty(Object.prototype, key, { value });
 
-function value<T>(this: T, fn: (value: T) => void): T {
-  fn(this);
-  return this;
+function value<T, R>(this: T, fn: (value: T) => R): R {
+  return fn(this);
 }
 
 export default key;

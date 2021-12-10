@@ -1,4 +1,4 @@
-# `$let`
+# `@@pipe`
 
 Call some function on a value as its argument and then continue with the return value.
 
@@ -7,11 +7,16 @@ Useful for transforming some value—especially in conjunction with [optional ch
 ## With Xnd
 
 ```js
-const displayPrice = cost?.[$let](formatPrice);
+function getSpecialRandomNumber() {
+  return Math.random()[pipe]((n) => (n < 0.5 ? n : n * 10));
+}
 ```
 
 ## Without Xnd
 
 ```js
-const displayPrice = cost === undefined ? undefined : formatPrice(cost);
+function getSpecialRandomNumber() {
+  const n = Math.random();
+  return n < 0.5 ? n : n * 10;
+}
 ```
