@@ -11,7 +11,7 @@ import also from "https://cdn.skypack.dev/xnd/also.js";
 ## Deno
 
 ```js
-import also from "https://cdn.skypack.dev/xnd/also.js?dts";
+import also from "https://deno.land/x/xnd@2.0.0/also.ts";
 ```
 
 ## Node.js
