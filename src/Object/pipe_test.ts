@@ -1,6 +1,6 @@
 import pipe from "./pipe.ts";
 
-import { assertEquals, assertStrictEquals } from "../_test_deps.ts";
+import { assertEquals, assertStrictEquals } from "../_deps_test.ts";
 
 for (const [type, value] of [
   ["Object", {}] as const,
