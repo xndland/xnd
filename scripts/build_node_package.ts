@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-env=DENO_AUTH_TOKENS,DENO_DIR,HOME --allow-read --allow-write --allow-run=npm
+#!/usr/bin/env -S deno run --allow-env=DENO_AUTH_TOKENS,DENO_DIR,HOME,XDG_CACHE_HOME --allow-read --allow-write --allow-run=npm
 
 import { build, BuildOptions } from "https://deno.land/x/dnt@0.7.4/mod.ts";
 
