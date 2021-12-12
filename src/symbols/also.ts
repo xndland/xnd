@@ -3,8 +3,6 @@
  *
  * Useful for side operations (e.g. inserting logging statements within a chain of operations).
  *
- * @example
- *
  * ```ts
  * import also from "../also.ts";
  *
