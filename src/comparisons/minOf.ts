@@ -2,10 +2,19 @@ import type Comparable from "../Comparable.ts";
 
 import compareValues from "./compareValues.ts";
 
+/**
+ * Returns the least of the specified values or `undefined` if not values are provided.
+ */
 export default function minOf<T extends Comparable>(): undefined;
+/**
+ * Returns the least of the specified values.
+ */
 export default function minOf<T extends Comparable>(
   ...values: [firstValue: T, ...restValues: T[]]
 ): T;
+/**
+ * Returns the least of the specified values or `undefined` if not values are provided.
+ */
 export default function minOf<T extends Comparable>(
   ...values: T[]
 ): T | undefined;

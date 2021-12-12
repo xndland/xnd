@@ -2,10 +2,19 @@ import type Comparable from "../Comparable.ts";
 
 import compareValues from "./compareValues.ts";
 
+/**
+ * Returns the greatest of the specified values or `undefined` if no values are provided.
+ */
 export default function maxOf<T extends Comparable>(): undefined;
+/**
+ * Returns the greatest of the specified values.
+ */
 export default function maxOf<T extends Comparable>(
   ...values: [firstValue: T, ...restValues: T[]]
 ): T;
+/**
+ * Returns the greatest of the specified values or `undefined` if no values are provided.
+ */
 export default function maxOf<T extends Comparable>(
   ...values: T[]
 ): T | undefined;

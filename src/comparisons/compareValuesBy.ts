@@ -3,6 +3,9 @@ import type Selectors from "../Selectors.ts";
 
 import compareValues from "./compareValues.ts";
 
+/**
+ * Compares two values by the values selected.
+ */
 export default function compareValuesBy<T>(
   a: T,
   b: T,

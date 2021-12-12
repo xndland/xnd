@@ -3,8 +3,6 @@
  *
  * Useful for transforming some value—especially in conjunction with [optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
  *
- * @example
- *
  * ```ts
  * import pipe from "../pipe.ts";
  *

@@ -2,6 +2,9 @@ import type Comparable from "../Comparable.ts";
 
 import compareTo from "../compareTo.ts";
 
+/**
+ * Compares two `Comparable` values.
+ */
 export default function compareValues<T extends Comparable | null | undefined>(
   a: T,
   b: T
