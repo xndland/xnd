@@ -5,7 +5,13 @@ import { build, BuildOptions } from "https://deno.land/x/dnt@0.7.4/mod.ts";
 const entryPoints: BuildOptions["entryPoints"] = ["./src/_index.ts"];
 
 for await (const entry of Deno.readDir("./src")) {
-  if (entry.name.startsWith("_") || entry.isDirectory) continue;
+  if (
+    entry.name.startsWith("_") ||
+    entry.name.endsWith("_test.ts") ||
+    entry.isDirectory
+  ) {
+    continue;
+  }
 
   const key = entry.name.slice(0, entry.name.lastIndexOf("."));
   entryPoints.push({ name: `./${key}`, path: `./src/${entry.name}` });
