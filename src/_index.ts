@@ -3,6 +3,7 @@ export type { default as CompareFunction} from "./CompareFunction.ts";
 export type { default as Selector } from "./Selector.ts";
 
 export { default as also } from "./also.ts";
+export { default as build } from "./build.ts";
 export { default as compareTo } from "./compareTo.ts";
 export { default as pipe } from "./pipe.ts";
 export { default as sort } from "./sort.ts";
