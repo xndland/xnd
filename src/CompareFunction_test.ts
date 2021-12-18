@@ -3,7 +3,7 @@ import CompareFunction from "./CompareFunction.ts";
 import compareBy from "./comparisons/compareBy.ts";
 import compareValues from "./comparisons/compareValues.ts";
 
-import { assert, assertEquals, assertNotStrictEquals } from "./_deps_test.ts";
+import { assert, assertEquals, assertNotStrictEquals } from "./_test_deps.ts";
 
 Deno.test("natural sort", () => {
   const compareFn = new CompareFunction<number>((a, b) => a - b);

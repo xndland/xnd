@@ -1,6 +1,6 @@
 import compareTo from "./compareTo.ts";
 
-import { assertSign } from "../_deps_test.ts";
+import { assertSign } from "../_test_deps.ts";
 
 const falsyTestValues = [false, 0, -0, 0n, "", null, undefined, NaN];
 const truthyTestValues = [

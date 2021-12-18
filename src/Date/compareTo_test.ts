@@ -1,6 +1,6 @@
 import compareTo from "./compareTo.ts";
 
-import { assertSign, assertThrows } from "../_deps_test.ts";
+import { assertSign, assertThrows } from "../_test_deps.ts";
 
 const epoch = new Date("1970-01-01T00:00:00.000Z");
 const epochPlus1Ms = new Date("1970-01-01T00:00:00.001Z");

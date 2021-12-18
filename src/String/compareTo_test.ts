@@ -1,6 +1,6 @@
 import compareTo from "./compareTo.ts";
 
-import { assertSign } from "../_deps_test.ts";
+import { assertSign } from "../_test_deps.ts";
 
 const testValues = ["", "42", "A", "a", "cinema", "iceman", "😍", "🤪"];
 

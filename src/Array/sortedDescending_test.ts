@@ -4,7 +4,7 @@ import {
   assertEquals,
   assertNotStrictEquals,
   assertThrows,
-} from "../_deps_test.ts";
+} from "../_test_deps.ts";
 
 Deno.test("returns new array", () => {
   const values = [20, 2, 10, 1];

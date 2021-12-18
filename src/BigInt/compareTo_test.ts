@@ -1,6 +1,6 @@
 import compareTo from "./compareTo.ts";
 
-import { assertSign, assertThrows } from "../_deps_test.ts";
+import { assertSign, assertThrows } from "../_test_deps.ts";
 
 const testValues = [
   -BigInt(Number.MAX_VALUE) * 2n,

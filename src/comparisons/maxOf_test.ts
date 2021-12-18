@@ -1,6 +1,6 @@
 import maxOf from "./maxOf.ts";
 
-import { assertEquals } from "../_deps_test.ts";
+import { assertEquals } from "../_test_deps.ts";
 
 Deno.test("returns undefined for no values", () => {
   assertEquals(maxOf(), undefined);

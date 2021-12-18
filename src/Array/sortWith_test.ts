@@ -1,6 +1,6 @@
 import sortWith from "./sortWith.ts";
 
-import { assertEquals, assertStrictEquals } from "../_deps_test.ts";
+import { assertEquals, assertStrictEquals } from "../_test_deps.ts";
 
 Deno.test("sorts-with in-place", () => {
   const values = [20, 2, 10, 1];

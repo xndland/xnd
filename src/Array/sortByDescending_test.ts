@@ -4,7 +4,7 @@ import {
   assertEquals,
   assertStrictEquals,
   assertThrows,
-} from "../_deps_test.ts";
+} from "../_test_deps.ts";
 
 Deno.test("sorts-by-descending in-place", () => {
   const values = [{ value: 20 }, { value: 2 }, { value: 10 }, { value: 1 }];

@@ -2,7 +2,7 @@ import reverseOrder from "./reverseOrder.ts";
 
 import CompareFunction from "../CompareFunction.ts";
 
-import { assert, assertEquals } from "../_deps_test.ts";
+import { assert, assertEquals } from "../_test_deps.ts";
 
 Deno.test("returns a CompareFunction", () => {
   const compareFn = reverseOrder();

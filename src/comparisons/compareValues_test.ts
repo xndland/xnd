@@ -1,6 +1,6 @@
 import compareValues from "./compareValues.ts";
 
-import { assertSign } from "../_deps_test.ts";
+import { assertSign } from "../_test_deps.ts";
 
 Deno.test("compares booleans", () => {
   assertSign(compareValues(false, false), 0);

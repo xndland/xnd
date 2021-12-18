@@ -1,6 +1,6 @@
 import sortedWith from "./sortedWith.ts";
 
-import { assertEquals, assertNotStrictEquals } from "../_deps_test.ts";
+import { assertEquals, assertNotStrictEquals } from "../_test_deps.ts";
 
 Deno.test("returns new array", () => {
   const values = [20, 2, 10, 1];

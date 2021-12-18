@@ -1,6 +1,6 @@
 import also from "./also.ts";
 
-import { assertEquals, assertStrictEquals } from "../_deps_test.ts";
+import { assertEquals, assertStrictEquals } from "../_test_deps.ts";
 
 for (const [type, value] of [
   ["Object", {}] as const,

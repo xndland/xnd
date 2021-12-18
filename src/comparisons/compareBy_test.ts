@@ -2,7 +2,7 @@ import compareBy from "./compareBy.ts";
 
 import CompareFunction from "../CompareFunction.ts";
 
-import { assert, assertSign } from "../_deps_test.ts";
+import { assert, assertSign } from "../_test_deps.ts";
 
 Deno.test("returns a CompareFunction", () => {
   const compareFn = compareBy<{ age: number }>("age");
