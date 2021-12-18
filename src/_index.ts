@@ -1,6 +1,6 @@
-export type { default as Comparable } from "./Comparable.ts";
+export type { default as Comparable } from "./Comparable.d.ts";
 export type { default as CompareFunction } from "./CompareFunction.ts";
-export type { default as Selector } from "./Selector.ts";
+export type { default as Selector } from "./Selector.d.ts";
 
 export { default as add } from "./add.ts";
 export { default as also } from "./also.ts";

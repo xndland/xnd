@@ -1,4 +1,4 @@
-import type Comparable from "../Comparable.ts";
+import type Comparable from "../Comparable.d.ts";
 
 import CompareFunction from "../CompareFunction.ts";
 import compareValues from "./compareValues.ts";

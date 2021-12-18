@@ -1,4 +1,4 @@
-import type Selectors from "../Selectors.ts";
+import type Selectors from "../Selectors.d.ts";
 
 import compareBy from "../comparisons/compareBy.ts";
 

@@ -1,4 +1,4 @@
-import type Selector from "./Selector.ts";
+import type Selector from "./Selector.d.ts";
 
 type Selectors<T> = [Selector<T>, ...Selector<T>[]];
 

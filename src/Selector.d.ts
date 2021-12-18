@@ -1,5 +1,5 @@
-import type Comparable from "./Comparable.ts";
-import type ValuePick from "./ValuePick.ts";
+import type Comparable from "./Comparable.d.ts";
+import type ValuePick from "./ValuePick.d.ts";
 
 export type FunctionSelector<T> = (value: T) => Comparable;
 

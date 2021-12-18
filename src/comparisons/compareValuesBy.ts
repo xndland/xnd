@@ -1,5 +1,5 @@
-import type Comparable from "../Comparable.ts";
-import type Selectors from "../Selectors.ts";
+import type Comparable from "../Comparable.d.ts";
+import type Selectors from "../Selectors.d.ts";
 
 import compareValues from "./compareValues.ts";
 
