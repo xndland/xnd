@@ -2,13 +2,13 @@ import build from "./build.ts";
 
 import { assertEquals } from "../_test_deps.ts";
 
-Deno.test("Array[build]<no entries>", () => {
+Deno.test("builds Array with no entries", () => {
   const expected: never[] = [];
   const actual = Array[build](function* () {});
   assertEquals(actual, expected);
 });
 
-Deno.test("Array[build]<single entry>", () => {
+Deno.test("builds Array with single entry", () => {
   const expected = ["hello"];
   const actual = Array[build](function* () {
     yield "hello";
@@ -16,7 +16,7 @@ Deno.test("Array[build]<single entry>", () => {
   assertEquals(actual, expected);
 });
 
-Deno.test("Array[build]<multiple entries>", () => {
+Deno.test("builds Array with multiple entries", () => {
   const expected = [1, 2, 3];
   const actual = Array[build](function* () {
     yield 1;
