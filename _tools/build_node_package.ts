@@ -23,7 +23,7 @@ await build({
     name: "xnd",
     version: Deno.args[0]?.replace(/^v/, ""),
     description:
-      "Safely extending and complementing JavaScript built-ins since 2021.",
+      "Safely augmenting and supplementing JavaScript built-ins since 2021.",
     license: "MIT",
     repository: {
       type: "git",
