@@ -1,25 +1,24 @@
 #!/usr/bin/env -S deno run --allow-env=DENO_AUTH_TOKENS,DENO_DIR,HOME,XDG_CACHE_HOME --allow-read --allow-write --allow-run=npm --allow-net=deno.land
 
-import { build, BuildOptions } from "https://deno.land/x/dnt@0.7.4/mod.ts";
+import { build, BuildOptions } from "https://deno.land/x/dnt@0.11.0/mod.ts";
 
-const entryPoints: BuildOptions["entryPoints"] = ["./src/_index.ts"];
+const entryPoints: BuildOptions["entryPoints"] = ["./_index.ts"];
 
-for await (const entry of Deno.readDir("./src")) {
-  if (
-    entry.name.startsWith("_") ||
-    entry.name.endsWith("_test.ts") ||
-    entry.isDirectory
-  ) {
+const entryPointRegExp = /^(?![._]).+(?<!_test)\.ts$/;
+
+for await (const entry of Deno.readDir("./")) {
+  if (!entryPointRegExp.test(entry.name) || entry.isDirectory) {
     continue;
   }
 
   const key = entry.name.slice(0, entry.name.lastIndexOf("."));
-  entryPoints.push({ name: `./${key}`, path: `./src/${entry.name}` });
+  entryPoints.push({ name: `./${key}`, path: `./${entry.name}` });
 }
 
 await build({
   entryPoints,
   outDir: "./node_package",
+  shims: { deno: "dev" },
   package: {
     name: "xnd",
     version: Deno.args[0]?.replace(/^v/, ""),
